@@ -25,7 +25,7 @@ export default function BlogPage() {
           <Link
             key={post.frontmatter.slug}
             href={`/blog/${post.frontmatter.slug}`}
-            className="group flex flex-col rounded-[--radius-md] border border-border bg-surface p-6 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card-hover"
+            className="group flex flex-col rounded-[--radius-md] border border-border bg-surface p-6 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-card-hover"
           >
             <h2 className="font-display text-lg font-bold text-text transition-colors group-hover:text-primary">
               {post.frontmatter.title}

@@ -28,7 +28,7 @@ export default function GuidesPage() {
           <Link
             key={guide.frontmatter.slug}
             href={`/guides/${guide.frontmatter.slug}`}
-            className="group flex flex-col rounded-[--radius-md] border border-border bg-surface p-6 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card-hover"
+            className="group flex flex-col rounded-[--radius-md] border border-border bg-surface p-6 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-card-hover"
           >
             <h2 className="font-display text-lg font-bold text-text transition-colors group-hover:text-primary">
               {guide.frontmatter.title}

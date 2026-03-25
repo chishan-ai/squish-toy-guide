@@ -98,7 +98,7 @@ export default function HomePage() {
               <Link
                 key={guide.frontmatter.slug}
                 href={`/guides/${guide.frontmatter.slug}`}
-                className="group rounded-[--radius-md] border border-border bg-background p-5 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card-hover"
+                className="group rounded-[--radius-md] border border-border bg-background p-5 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-card-hover"
               >
                 <h3 className="font-semibold text-text transition-colors group-hover:text-primary">
                   {guide.frontmatter.title}
