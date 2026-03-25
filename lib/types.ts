@@ -54,6 +54,7 @@ export interface GuideFrontmatter {
   lastUpdated: string;
   description?: string;
   howToSteps?: HowToStep[];
+  faqItems?: FAQItem[];
 }
 
 export interface BlogFrontmatter {

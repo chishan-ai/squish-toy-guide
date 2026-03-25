@@ -1,10 +1,11 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getAllGuides, getGuideBySlug, getAllProducts } from "@/lib/content";
-import { generateArticleSchema, generateBreadcrumbSchema, generateHowToSchema } from "@/lib/seo";
+import { generateArticleSchema, generateBreadcrumbSchema, generateHowToSchema, generateFAQSchema } from "@/lib/seo";
 import { renderMdx } from "@/lib/mdx";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import AdSlot from "@/components/AdSlot";
+import FAQAccordion from "@/components/FAQAccordion";
 import RelatedContent from "@/components/RelatedContent";
 import type { ProductFrontmatter, GuideFrontmatter } from "@/lib/types";
 
@@ -82,6 +83,10 @@ export default async function GuidePage({ params }: PageProps) {
     );
   }
 
+  if (frontmatter.faqItems?.length) {
+    schemas.push(generateFAQSchema(frontmatter.faqItems));
+  }
+
   return (
     <>
       <script
@@ -121,6 +126,10 @@ export default async function GuidePage({ params }: PageProps) {
         <div className="prose prose-editorial mt-8">
           {mdxContent}
         </div>
+
+        {frontmatter.faqItems && frontmatter.faqItems.length > 0 && (
+          <FAQAccordion items={frontmatter.faqItems} />
+        )}
 
         <div className="my-8">
           <AdSlot format="rectangle" />
