@@ -118,7 +118,7 @@ export default async function GuidePage({ params }: PageProps) {
           <AdSlot format="rectangle" className="flex md:hidden" />
         </div>
 
-        <div className="prose-editorial mt-8">
+        <div className="prose prose-editorial mt-8">
           {mdxContent}
         </div>
 

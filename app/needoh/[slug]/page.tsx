@@ -128,7 +128,7 @@ export default async function ProductPage({ params }: PageProps) {
 
         <SensoryScorecard scores={frontmatter.sensoryScores} />
 
-        <div className="prose-editorial mt-8">
+        <div className="prose prose-editorial mt-8">
           {mdxContent}
         </div>
 

@@ -14,7 +14,7 @@ export default function AboutPage() {
         About Squish Toy Guide
       </h1>
 
-      <div className="prose-editorial mt-6">
+      <div className="prose prose-editorial mt-6">
         <p>
           Squish Toy Guide is the internet&apos;s most detailed resource for
           Needoh and sensory fidget toy reviews. We test every product hands-on

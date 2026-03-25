@@ -13,7 +13,7 @@ export default function PrivacyPolicyPage() {
         Last updated: March 25, 2026
       </p>
 
-      <div className="prose-editorial mt-8">
+      <div className="prose prose-editorial mt-8">
         <h2>Introduction</h2>
         <p>
           Squish Toy Guide (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;)

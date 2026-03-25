@@ -13,7 +13,7 @@ export default function TermsPage() {
         Last updated: March 25, 2026
       </p>
 
-      <div className="prose-editorial mt-8">
+      <div className="prose prose-editorial mt-8">
         <h2>Acceptance of Terms</h2>
         <p>
           By accessing and using squishtoyguide.com, you agree to be bound by
