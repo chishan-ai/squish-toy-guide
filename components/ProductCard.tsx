@@ -47,7 +47,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       </div>
 
       <div className="flex flex-1 flex-col p-3">
-        <h3 className="text-sm font-semibold text-text transition-colors group-hover:text-primary">
+        <h3 className="text-base font-semibold leading-snug text-text transition-colors group-hover:text-primary">
           {product.title.replace(" Review", "")}
         </h3>
 
