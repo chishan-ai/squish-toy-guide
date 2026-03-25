@@ -15,31 +15,31 @@ export default function BlogPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-10">
-      <h1 className="text-3xl font-bold text-gray-900 md:text-4xl">Blog</h1>
-      <p className="mt-3 max-w-2xl text-lg text-gray-600">
+      <h1 className="font-display text-3xl font-bold text-text md:text-4xl">Blog</h1>
+      <p className="mt-3 max-w-2xl text-lg text-text-secondary">
         Deep dives, experiments, and trends from the world of squish toys.
       </p>
 
-      <div className="mt-10 space-y-6">
+      <div className="mt-10 grid gap-5 sm:grid-cols-2">
         {blogs.map((post) => (
           <Link
             key={post.frontmatter.slug}
             href={`/blog/${post.frontmatter.slug}`}
-            className="block rounded-xl border border-gray-200 p-6 transition-shadow hover:shadow-md"
+            className="group flex flex-col rounded-[--radius-md] border border-border bg-surface p-6 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card-hover"
           >
-            <h2 className="text-xl font-bold text-gray-900">
+            <h2 className="font-display text-lg font-bold text-text transition-colors group-hover:text-primary">
               {post.frontmatter.title}
             </h2>
             {post.frontmatter.description && (
-              <p className="mt-2 text-gray-600">
+              <p className="mt-2 text-sm text-text-secondary">
                 {post.frontmatter.description}
               </p>
             )}
-            <div className="mt-3 flex items-center gap-3">
-              <span className="text-sm font-medium text-purple-600">
+            <div className="mt-auto flex items-center gap-3 pt-4">
+              <span className="text-sm font-semibold text-primary">
                 Read article &rarr;
               </span>
-              <span className="text-xs text-gray-400">
+              <span className="text-xs text-text-muted">
                 {post.frontmatter.lastUpdated}
               </span>
             </div>

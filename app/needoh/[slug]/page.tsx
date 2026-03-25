@@ -53,7 +53,6 @@ export default async function ProductPage({ params }: PageProps) {
   const { frontmatter, content } = item;
   const mdxContent = await renderMdx(content);
 
-  // Resolve related products and guides
   const allProducts = getAllProducts();
   const allGuides = getAllGuides();
 
@@ -82,7 +81,6 @@ export default async function ProductPage({ params }: PageProps) {
       />
 
       <article className="mx-auto max-w-4xl px-4 py-6">
-        {/* Breadcrumb */}
         <BreadcrumbNav
           items={[
             { label: "Needoh", href: "/needoh" },
@@ -92,58 +90,52 @@ export default async function ProductPage({ params }: PageProps) {
 
         {/* Hero section */}
         <div className="mt-6 grid gap-6 md:grid-cols-2">
-          {/* Product image placeholder */}
-          <div className="flex aspect-[4/3] items-center justify-center rounded-xl bg-gradient-to-br from-purple-100 to-pink-100 text-6xl">
+          <div className="flex aspect-[4/3] items-center justify-center rounded-[--radius-lg] bg-gradient-to-br from-primary-light to-accent-light text-6xl">
             🧸
           </div>
 
           <div className="flex flex-col justify-center">
-            <span className="text-sm font-medium text-purple-600">
+            <span className="text-sm font-semibold text-primary">
               {frontmatter.brand}
             </span>
-            <h1 className="mt-1 text-3xl font-bold text-gray-900">
+            <h1 className="mt-1 font-display text-3xl font-bold text-text">
               {frontmatter.title.replace(" Review", "")}
             </h1>
-            <p className="mt-2 text-lg text-gray-600">{frontmatter.priceRange}</p>
+            <p className="mt-2 text-lg text-text-secondary">{frontmatter.priceRange}</p>
 
             <div className="mt-4 flex flex-wrap gap-2">
-              <span className="rounded-full bg-purple-100 px-3 py-1 text-xs font-medium text-purple-700">
+              <span className="rounded-full bg-primary-light px-3 py-1 text-xs font-semibold text-primary">
                 {frontmatter.feel}
               </span>
-              <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-700">
+              <span className="rounded-full bg-accent-light px-3 py-1 text-xs font-semibold text-accent">
                 {frontmatter.useCase}
               </span>
-              <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-700">
+              <span className="rounded-full bg-teal-light px-3 py-1 text-xs font-semibold text-teal">
                 Ages {frontmatter.ageRange}
               </span>
             </div>
 
-            <p className="mt-2 text-xs text-gray-400">
+            <p className="mt-2 text-xs text-text-muted">
               Last updated: {frontmatter.lastUpdated}
             </p>
           </div>
         </div>
 
-        {/* Ad slot 1 — after hero */}
         <div className="my-8">
           <AdSlot format="leaderboard" className="hidden md:flex" />
           <AdSlot format="rectangle" className="flex md:hidden" />
         </div>
 
-        {/* Sensory Scorecard */}
         <SensoryScorecard scores={frontmatter.sensoryScores} />
 
-        {/* Article content */}
-        <div className="prose prose-gray mt-8 max-w-none prose-headings:text-gray-900 prose-a:text-purple-600">
+        <div className="prose-editorial mt-8">
           {mdxContent}
         </div>
 
-        {/* Ad slot 2 — after content */}
         <div className="my-8">
           <AdSlot format="rectangle" />
         </div>
 
-        {/* Related content */}
         <RelatedContent products={relatedProducts} guides={relatedGuides} />
       </article>
     </>

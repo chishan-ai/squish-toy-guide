@@ -14,11 +14,11 @@ export default function StickyHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 border-b border-border bg-surface/95 backdrop-blur-sm shadow-card">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-xl font-bold text-gray-900">
-            🧸 Squish Toy Guide
+          <span className="font-display text-xl font-bold text-text">
+            Squish Toy Guide
           </span>
         </Link>
 
@@ -28,7 +28,7 @@ export default function StickyHeader() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900"
+                className="text-sm font-medium text-text-secondary transition-colors hover:text-primary"
               >
                 {link.label}
               </Link>
@@ -39,7 +39,7 @@ export default function StickyHeader() {
         {/* Mobile hamburger */}
         <button
           type="button"
-          className="flex h-10 w-10 items-center justify-center rounded-lg text-gray-600 hover:bg-gray-100 md:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-[--radius-sm] text-text-secondary hover:bg-primary-light md:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
@@ -70,13 +70,13 @@ export default function StickyHeader() {
 
       {/* Mobile drawer */}
       {menuOpen && (
-        <div className="border-t border-gray-100 bg-white px-4 py-4 md:hidden">
+        <div className="border-t border-border bg-surface px-4 py-4 md:hidden">
           <ul className="space-y-3">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="block rounded-lg px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50"
+                  className="block rounded-[--radius-sm] px-3 py-2 text-base font-medium text-text hover:bg-primary-light hover:text-primary"
                   onClick={() => setMenuOpen(false)}
                 >
                   {link.label}
@@ -84,41 +84,6 @@ export default function StickyHeader() {
               </li>
             ))}
           </ul>
-
-          <div className="mt-4 border-t border-gray-100 pt-4">
-            <p className="mb-2 px-3 text-xs font-semibold uppercase tracking-wider text-gray-400">
-              Browse by
-            </p>
-            <ul className="space-y-1">
-              <li>
-                <Link
-                  href="/needoh"
-                  className="block rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-gray-50"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  All Needoh Toys
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/guides"
-                  className="block rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-gray-50"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  All Guides
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  className="block rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-gray-50"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  All Blog Posts
-                </Link>
-              </li>
-            </ul>
-          </div>
         </div>
       )}
     </header>

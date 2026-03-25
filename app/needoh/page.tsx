@@ -19,17 +19,17 @@ export default function NeedohPillarPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10">
-      <h1 className="text-3xl font-bold text-gray-900 md:text-4xl">
+      <h1 className="font-display text-3xl font-bold text-text md:text-4xl">
         Needoh Toys: The Complete Guide
       </h1>
-      <p className="mt-3 max-w-2xl text-lg text-gray-600">
+      <p className="mt-3 max-w-2xl text-lg text-text-secondary">
         Needoh by Schylling is one of the most popular fidget toy brands in the
         world. We&apos;ve tested every toy in the lineup and rated them on five
         sensory dimensions. Explore below to find your perfect squeeze.
       </p>
 
       <div className="mt-10">
-        <h2 className="mb-4 text-xl font-bold text-gray-900">All Needoh Products</h2>
+        <h2 className="mb-4 font-display text-xl font-bold text-text">All Needoh Products</h2>
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {sorted.map((item) => (
             <ProductCard
@@ -40,9 +40,9 @@ export default function NeedohPillarPage() {
         </div>
       </div>
 
-      <div className="mt-12 rounded-xl bg-purple-50 p-6">
-        <h2 className="text-xl font-bold text-gray-900">What Is Needoh?</h2>
-        <p className="mt-3 leading-relaxed text-gray-700">
+      <div className="mt-12 rounded-[--radius-md] bg-primary-light p-6">
+        <h2 className="font-display text-xl font-bold text-text">What Is Needoh?</h2>
+        <p className="mt-3 leading-relaxed text-text-secondary">
           Needoh is a line of sensory fidget toys manufactured by Schylling, a
           classic toy company founded in 1975. Each Needoh toy is filled with a
           proprietary non-toxic, dough-like material that provides an incredibly
@@ -51,7 +51,7 @@ export default function NeedohPillarPage() {
           thanks to viral TikTok videos showcasing their unique texture and
           ASMR-worthy squish.
         </p>
-        <p className="mt-3 leading-relaxed text-gray-700">
+        <p className="mt-3 leading-relaxed text-text-secondary">
           The lineup ranges from the iconic Nice Cube to creative shapes like
           the Jellyfish and Gumdrop. Prices typically range from $5 to $12,
           making them an accessible entry point into the world of sensory toys.

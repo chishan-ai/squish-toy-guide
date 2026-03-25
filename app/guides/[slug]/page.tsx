@@ -91,7 +91,7 @@ export default async function GuidePage({ params }: PageProps) {
         }}
       />
 
-      <article className="mx-auto max-w-4xl px-4 py-6">
+      <article className="mx-auto max-w-3xl px-4 py-6">
         <BreadcrumbNav
           items={[
             { label: "Guides", href: "/guides" },
@@ -100,15 +100,15 @@ export default async function GuidePage({ params }: PageProps) {
         />
 
         <div className="mt-6">
-          <h1 className="text-3xl font-bold text-gray-900 md:text-4xl">
+          <h1 className="font-display text-3xl font-bold text-text md:text-4xl">
             {frontmatter.title}
           </h1>
           {frontmatter.description && (
-            <p className="mt-3 text-lg text-gray-600">
+            <p className="mt-3 text-lg text-text-secondary">
               {frontmatter.description}
             </p>
           )}
-          <p className="mt-2 text-xs text-gray-400">
+          <p className="mt-2 text-xs text-text-muted">
             Last updated: {frontmatter.lastUpdated}
           </p>
         </div>
@@ -118,7 +118,7 @@ export default async function GuidePage({ params }: PageProps) {
           <AdSlot format="rectangle" className="flex md:hidden" />
         </div>
 
-        <div className="prose prose-gray mt-8 max-w-none prose-headings:text-gray-900 prose-a:text-purple-600">
+        <div className="prose-editorial mt-8">
           {mdxContent}
         </div>
 
