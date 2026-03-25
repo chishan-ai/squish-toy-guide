@@ -11,9 +11,9 @@ const guideLinks = [
 ];
 
 const browseLinks = [
-  { label: "By Feel", href: "/toys/by-feel" },
-  { label: "By Use", href: "/toys/by-use" },
-  { label: "Under $10", href: "/toys/under-10" },
+  { label: "All Needoh Toys", href: "/needoh" },
+  { label: "Cleaning Guide", href: "/guides/how-to-clean-needoh" },
+  { label: "Needoh Near Me", href: "/guides/needoh-near-me" },
 ];
 
 const legalLinks = [

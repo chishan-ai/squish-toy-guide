@@ -5,8 +5,8 @@ import Link from "next/link";
 
 const navLinks = [
   { label: "Needoh", href: "/needoh" },
-  { label: "Guides", href: "/guides/best-needoh-toys" },
-  { label: "Blog", href: "/blog/what-is-needoh-made-of" },
+  { label: "Guides", href: "/guides" },
+  { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
 ];
 
@@ -92,29 +92,29 @@ export default function StickyHeader() {
             <ul className="space-y-1">
               <li>
                 <Link
-                  href="/toys/by-feel"
+                  href="/needoh"
                   className="block rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-gray-50"
                   onClick={() => setMenuOpen(false)}
                 >
-                  By Feel
+                  All Needoh Toys
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/toys/by-use"
+                  href="/guides"
                   className="block rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-gray-50"
                   onClick={() => setMenuOpen(false)}
                 >
-                  By Use
+                  All Guides
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/toys/under-10"
+                  href="/blog"
                   className="block rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-gray-50"
                   onClick={() => setMenuOpen(false)}
                 >
-                  Under $10
+                  All Blog Posts
                 </Link>
               </li>
             </ul>

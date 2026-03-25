@@ -11,10 +11,21 @@ export const metadata: Metadata = {
   description:
     "Your ultimate guide to squish toys — expert reviews, sensory scorecards, and buying guides for Needoh and more.",
   metadataBase: new URL("https://squishtoyguide.com"),
+  alternates: {
+    canonical: "./",
+  },
   openGraph: {
     siteName: "Squish Toy Guide",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "Squish Toy Guide — Reviews, Scorecards & Buying Guides",
+      },
+    ],
   },
   robots: {
     index: true,

@@ -20,6 +20,12 @@ export function generateWebsiteSchema() {
 }
 
 export function generateProductSchema(product: ProductFrontmatter) {
+  const scores = product.sensoryScores;
+  const avgScore =
+    (scores.squishiness + scores.noise + scores.durability + scores.stainRisk + scores.size) / 5;
+  // Map 1-5 sensory scale to 1-5 rating
+  const rating = Math.round(avgScore * 10) / 10;
+
   return {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -33,6 +39,19 @@ export function generateProductSchema(product: ProductFrontmatter) {
       "@type": "Review",
       author: { "@type": "Organization", name: SITE_NAME },
       datePublished: product.lastUpdated,
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: rating,
+        bestRating: 5,
+        worstRating: 1,
+      },
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: rating,
+      bestRating: 5,
+      worstRating: 1,
+      ratingCount: 1,
     },
   };
 }
