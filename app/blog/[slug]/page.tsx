@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getAllBlogs, getBlogBySlug, getAllProducts, getAllGuides } from "@/lib/content";
-import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/seo";
+import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema } from "@/lib/seo";
 import { renderMdx } from "@/lib/mdx";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import AdSlot from "@/components/AdSlot";
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: frontmatter.title,
     description:
       frontmatter.description ??
-      `${frontmatter.title} — on Squish Toy Guide.`,
+      `${frontmatter.title} on Squish Toy Guide.`,
     openGraph: {
       title: frontmatter.title,
       description: frontmatter.description,
@@ -70,12 +70,18 @@ export default async function BlogPostPage({ params }: PageProps) {
     { name: frontmatter.title, url: `/blog/${slug}` },
   ]);
 
+  const schemas: object[] = [articleSchema, breadcrumbSchema];
+
+  if (frontmatter.faqItems?.length) {
+    schemas.push(generateFAQSchema(frontmatter.faqItems));
+  }
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([articleSchema, breadcrumbSchema]),
+          __html: JSON.stringify(schemas),
         }}
       />
 

@@ -1,4 +1,4 @@
-import type { ProductFrontmatter, GuideFrontmatter, BlogFrontmatter } from "./types";
+import type { ProductFrontmatter, GuideFrontmatter, BlogFrontmatter, HowToStep, FAQItem } from "./types";
 
 const SITE_URL = "https://squishtoyguide.com";
 const SITE_NAME = "Squish Toy Guide";
@@ -10,7 +10,7 @@ export function generateWebsiteSchema() {
     name: SITE_NAME,
     url: SITE_URL,
     description:
-      "Your ultimate guide to squish toys — reviews, sensory scorecards, and buying guides for Needoh and more.",
+      "Your ultimate guide to squish toys: reviews, sensory scorecards, and buying guides for Needoh and more.",
     publisher: {
       "@type": "Organization",
       name: SITE_NAME,
@@ -32,7 +32,7 @@ export function generateProductSchema(product: ProductFrontmatter) {
     name: product.title.replace(" Review", ""),
     description:
       product.description ??
-      `${product.title} — expert review with sensory scorecard.`,
+      `${product.title}: expert review with sensory scorecard.`,
     brand: { "@type": "Brand", name: product.brand },
     image: `${SITE_URL}${product.image}`,
     review: {
@@ -83,5 +83,39 @@ export function generateArticleSchema(
     dateModified: guide.lastUpdated,
     author: { "@type": "Organization", name: SITE_NAME },
     publisher: { "@type": "Organization", name: SITE_NAME },
+  };
+}
+
+export function generateHowToSchema(
+  title: string,
+  description: string,
+  steps: HowToStep[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: title,
+    description,
+    step: steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+    })),
+  };
+}
+
+export function generateFAQSchema(items: FAQItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
   };
 }

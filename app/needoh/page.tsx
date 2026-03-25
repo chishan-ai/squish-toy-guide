@@ -3,7 +3,7 @@ import ProductCard from "@/components/ProductCard";
 import { getAllProducts } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Needoh Toys — Complete Guide & Reviews",
+  title: "Needoh Toys | Complete Guide & Reviews",
   description:
     "Explore every Needoh fidget toy with expert reviews, sensory scorecards, and buying guides. Find the perfect squeeze.",
 };
@@ -20,7 +20,7 @@ export default function NeedohPillarPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-10">
       <h1 className="text-3xl font-bold text-gray-900 md:text-4xl">
-        Needoh Toys — The Complete Guide
+        Needoh Toys: The Complete Guide
       </h1>
       <p className="mt-3 max-w-2xl text-lg text-gray-600">
         Needoh by Schylling is one of the most popular fidget toy brands in the

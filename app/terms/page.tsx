@@ -27,8 +27,8 @@ export default function TermsPage() {
         <section>
           <h2 className="text-xl font-bold text-gray-900">Use of Content</h2>
           <p>
-            All content on Squish Toy Guide — including text, images, reviews,
-            and scorecards — is for informational purposes only. Reviews reflect
+            All content on Squish Toy Guide, including text, images, reviews,
+            and scorecards, is for informational purposes only. Reviews reflect
             our honest opinions based on hands-on testing.
           </p>
         </section>

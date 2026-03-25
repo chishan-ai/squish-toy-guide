@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: frontmatter.title,
     description:
       frontmatter.description ??
-      `${frontmatter.title} — expert review with sensory scorecard on Squish Toy Guide.`,
+      `${frontmatter.title}: expert review with sensory scorecard on Squish Toy Guide.`,
     openGraph: {
       title: frontmatter.title,
       description: frontmatter.description,

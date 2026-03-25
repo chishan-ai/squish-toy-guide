@@ -31,6 +31,16 @@ export interface ProductFrontmatter {
   description?: string;
 }
 
+export interface HowToStep {
+  name: string;
+  text: string;
+}
+
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
 export interface GuideFrontmatter {
   title: string;
   slug: string;
@@ -43,6 +53,7 @@ export interface GuideFrontmatter {
   image: string;
   lastUpdated: string;
   description?: string;
+  howToSteps?: HowToStep[];
 }
 
 export interface BlogFrontmatter {
@@ -56,6 +67,7 @@ export interface BlogFrontmatter {
   image: string;
   lastUpdated: string;
   description?: string;
+  faqItems?: FAQItem[];
 }
 
 export type ContentFrontmatter =

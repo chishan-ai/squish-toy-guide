@@ -3,9 +3,9 @@ import Link from "next/link";
 import { getAllBlogs } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Blog — Squish Toy Guide",
+  title: "Blog | Squish Toy Guide",
   description:
-    "The latest on Needoh toys — what they're made of, TikTok trends, experiments, and more.",
+    "The latest on Needoh toys: what they're made of, TikTok trends, experiments, and more.",
 };
 
 export default function BlogPage() {

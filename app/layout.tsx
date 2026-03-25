@@ -7,11 +7,11 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "Squish Toy Guide — Reviews, Scorecards & Buying Guides",
+    default: "Squish Toy Guide | Reviews, Scorecards & Buying Guides",
     template: "%s | Squish Toy Guide",
   },
   description:
-    "Your ultimate guide to squish toys — expert reviews, sensory scorecards, and buying guides for Needoh and more.",
+    "Your ultimate guide to squish toys: expert reviews, sensory scorecards, and buying guides for Needoh and more.",
   metadataBase: new URL("https://squishtoyguide.com"),
   alternates: {
     canonical: "./",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
         url: "/og-default.png",
         width: 1200,
         height: 630,
-        alt: "Squish Toy Guide — Reviews, Scorecards & Buying Guides",
+        alt: "Squish Toy Guide | Reviews, Scorecards & Buying Guides",
       },
     ],
   },

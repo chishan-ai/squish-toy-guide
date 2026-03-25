@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Privacy Policy for Squish Toy Guide — how we handle your data.",
+  description: "Privacy Policy for Squish Toy Guide. How we handle your data.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -40,8 +40,8 @@ export default function PrivacyPolicyPage() {
           </h2>
           <p>
             We use analytics services to understand how visitors use our site.
-            These services may use cookies — small data files stored on your
-            device — to track usage patterns. You can control cookies through
+            These services may use cookies (small data files stored on your
+            device) to track usage patterns. You can control cookies through
             your browser settings.
           </p>
         </section>

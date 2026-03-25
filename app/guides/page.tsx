@@ -3,9 +3,9 @@ import Link from "next/link";
 import { getAllGuides } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Guides — Squish Toy Guide",
+  title: "Guides | Squish Toy Guide",
   description:
-    "Expert guides on Needoh toys — buying advice, cleaning tips, and everything you need to know about squish toys.",
+    "Expert guides on Needoh toys: buying advice, cleaning tips, and everything you need to know about squish toys.",
 };
 
 export default function GuidesPage() {
@@ -19,7 +19,7 @@ export default function GuidesPage() {
         Guides & How-Tos
       </h1>
       <p className="mt-3 max-w-2xl text-lg text-gray-600">
-        Everything you need to know about Needoh toys — from buying guides to
+        Everything you need to know about Needoh toys, from buying guides to
         care tips.
       </p>
 

@@ -26,7 +26,7 @@ export default function AboutPage() {
         <p>
           Fidget and sensory toys have exploded in popularity, but reliable
           reviews are hard to find. Most content is either sponsored or surface-
-          level. We built Squish Toy Guide to be the resource we wished existed —
+          level. We built Squish Toy Guide to be the resource we wished existed:
           honest, detailed, and data-driven.
         </p>
 

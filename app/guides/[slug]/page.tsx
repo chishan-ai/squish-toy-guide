@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getAllGuides, getGuideBySlug, getAllProducts } from "@/lib/content";
-import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/seo";
+import { generateArticleSchema, generateBreadcrumbSchema, generateHowToSchema } from "@/lib/seo";
 import { renderMdx } from "@/lib/mdx";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import AdSlot from "@/components/AdSlot";
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: frontmatter.title,
     description:
       frontmatter.description ??
-      `${frontmatter.title} — expert guide on Squish Toy Guide.`,
+      `${frontmatter.title}: expert guide on Squish Toy Guide.`,
     openGraph: {
       title: frontmatter.title,
       description: frontmatter.description,
@@ -70,12 +70,24 @@ export default async function GuidePage({ params }: PageProps) {
     { name: frontmatter.title, url: `/guides/${slug}` },
   ]);
 
+  const schemas: object[] = [articleSchema, breadcrumbSchema];
+
+  if (frontmatter.howToSteps?.length) {
+    schemas.push(
+      generateHowToSchema(
+        frontmatter.title,
+        frontmatter.description ?? frontmatter.title,
+        frontmatter.howToSteps
+      )
+    );
+  }
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([articleSchema, breadcrumbSchema]),
+          __html: JSON.stringify(schemas),
         }}
       />
 
