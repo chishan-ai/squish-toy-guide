@@ -33,6 +33,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: frontmatter.title,
       description: frontmatter.description,
       type: "article",
+      images: [
+        {
+          url: frontmatter.image,
+          width: 1200,
+          height: 630,
+          alt: frontmatter.title,
+        },
+      ],
     },
   };
 }

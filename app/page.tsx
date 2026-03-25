@@ -38,22 +38,22 @@ export default function HomePage() {
               Explore Needoh
             </Link>
             <Link
-              href="/toys/by-feel"
+              href="/guides/best-needoh-toys"
               className="rounded-full border border-gray-300 bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 transition-colors hover:bg-gray-50"
             >
-              Browse by Feel
+              Best Picks
             </Link>
             <Link
-              href="/toys/by-use"
+              href="/guides"
               className="rounded-full border border-gray-300 bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 transition-colors hover:bg-gray-50"
             >
-              Browse by Use
+              Buying Guides
             </Link>
             <Link
-              href="/toys/under-10"
+              href="/blog"
               className="rounded-full border border-gray-300 bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 transition-colors hover:bg-gray-50"
             >
-              Under $10
+              Blog
             </Link>
           </div>
         </div>
